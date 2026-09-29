@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <title>OmniCam — A world in motion</title>
+  <meta name="description" content="OmniCam generates scene-aware camera trajectories from a single panorama and a language instruction. Explore nine video demos, geometry-grounded pose token learning, and the OmniCaT dataset.">
+  <meta property="og:title" content="OmniCam: Omni-Camera Trajectory Generation">
+  <meta property="og:description" content="One panorama. A world in motion. Geometry-grounded pose token learning for scene-aware camera trajectories.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zhenyangliu.github.io/OmniCam-Website/">
+  <link rel="canonical" href="https://zhenyangliu.github.io/OmniCam-Website/">
+  <meta property="og:image" content="https://zhenyangliu.github.io/OmniCam-Website/static/media/teaser.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="static/js/index.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="wordmark" href="#" aria-label="OmniCam home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13"/><ellipse cx="16" cy="16" rx="6" ry="13" transform="rotate(45 16 16)"/><path d="M4 12 28 20M12 4 20 28"/><circle cx="16" cy="16" r="3"/></svg>OmniCam<span class="wordmark-dot">.</span></a>
+  <nav aria-label="Main navigation"><a href="#explore">Explore</a><a href="#method">Method</a><a href="#results">Results</a><a href="#dataset">Dataset</a></nav>
+  <a class="nav-paper" href="static/paper/OmniCam.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-inner wrap">
+    <div class="hero-copy">
+      <p class="eyebrow light"><span class="status-dot"></span> GEOMETRY-GROUNDED CAMERA INTELLIGENCE</p>
+      <h1 id="hero-title">One panorama.<br>A world <em>in motion.</em></h1>
+      <p class="hero-description">Turn a scene and a sentence into a camera trajectory.<br class="desktop-break"> Geometry gives it structure. Language gives it intent.</p>
+      <div class="hero-actions"><a class="button lime" href="#explore">Explore the trajectories <span aria-hidden="true">↘</span></a><a class="text-link" href="static/paper/OmniCam.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-signals"><span><b>360°</b> scene context</span><span><b>4</b> camera behaviors</span><span><b>SE(3)</b> pose sequences</span></div>
+    </div>
+    <div class="hero-visual">
+      <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+      <div class="viewfinder">
+        <div class="viewfinder-top"><span><i class="status-dot"></i> OMNICAM / GENERATED VIEW</span><span>01 — TARGET</span></div>
+        <video id="hero-video" class="hero-video" muted loop playsinline preload="none" poster="static/media/posters/outdoor_courtyard-target_christmas_tree_3-result.jpg" data-src="examples/outdoor_courtyard/target_christmas_tree_3/result.mp4" aria-label="Camera pans across a Christmas tree in a snowy courtyard"></video>
+        <span class="frame-corner corner-tl" aria-hidden="true"></span><span class="frame-corner corner-br" aria-hidden="true"></span>
+        <div class="viewfinder-bottom"><span>“Focus on the Christmas tree.”<small>Instruction summary · completed render</small></span><button id="hero-play" class="icon-button" type="button" aria-label="Play hero video">▶</button></div>
+      </div>
+      <div class="input-float"><img src="examples/outdoor_courtyard/panorama.jpg" alt="Full 360-degree panorama of the snowy courtyard" width="1920" height="960"><div><span class="tiny-label">THE STARTING POINT</span><strong>A single panorama <span aria-hidden="true">↗</span></strong></div></div>
+      <div class="axis" aria-hidden="true"><span>x</span><span>y</span><span>z</span></div>
+    </div>
+  </div>
+  <div class="hero-footer wrap"><span>OMNICAM / RESEARCH PROJECT</span><a href="#publication">Meet the research <span aria-hidden="true">↓</span></a><span>SCENE → GEOMETRY → MOTION</span></div>
+</section>
+
+<section class="publication wrap" id="publication" aria-labelledby="paper-title">
+  <div class="publication-label"><span class="section-number">01 / THE RESEARCH</span><span class="small-tag">2026 · Preprint</span></div>
+  <h2 id="paper-title">Omni-Camera Trajectory Generation<br>via Geometry-Grounded Pose Token Learning</h2>
+  <div class="authors"><span>Zhenyang Liu<sup>1,2,3</sup></span><span>Chenjie Cao<sup>3</sup></span><span>Yisu Zhang<sup>4,3</sup></span><span>Xuhui Zuo<sup>3</sup></span><span>Xiangyang Xue<sup>1,‡</sup></span><span>Yanwei Fu<sup>1,2,‡</sup></span><span>Tengfei Wang<sup>3,†</sup></span><span>Chunchao Guo<sup>3</sup></span></div>
+  <div class="affiliations"><span><sup>1</sup> Fudan University</span><span><sup>2</sup> Shanghai Innovation Institute</span><span><sup>3</sup> Tencent Hunyuan</span><span><sup>4</sup> Zhejiang University</span></div>
+  <p class="author-roles">† Project Lead <span>‡ Corresponding authors</span></p>
+  <div class="resource-links"><a href="static/paper/OmniCam.pdf" target="_blank" rel="noopener">Paper PDF <span>↗</span></a><a href="#explore">Video demos <span>↘</span></a><a href="#citation">Citation <span>↘</span></a></div>
+</section>
+
+<section class="explore-section" id="explore" aria-labelledby="explore-title">
+  <div class="wrap">
+    <div class="section-heading"><div><p class="section-number light">02 / TRAJECTORY EXPLORER</p><h2 id="explore-title">Same scene.<br><span class="muted">Different intentions.</span></h2></div><p>Choose a world. Choose a behavior.<br>Watch the planned path become a new view.</p></div>
+    <div class="scene-selector" role="tablist" aria-label="Choose an example scene">
+      <button class="scene-choice selected" id="scene-courtyard" role="tab" aria-selected="true" aria-controls="scene-panel" data-scene="courtyard"><img src="examples/outdoor_courtyard/panorama.jpg" alt="" width="1920" height="960" loading="lazy"><span><small>01 / OUTDOOR</small>Winter courtyard</span><i aria-hidden="true">↗</i></button>
+      <button class="scene-choice" id="scene-house" role="tab" aria-selected="false" aria-controls="scene-panel" tabindex="-1" data-scene="house"><img src="examples/outdoor_house/panorama.jpg" alt="" width="1920" height="960" loading="lazy"><span><small>02 / OUTDOOR</small>Modern house</span><i aria-hidden="true">↗</i></button>
+      <button class="scene-choice" id="scene-dining" role="tab" aria-selected="false" aria-controls="scene-panel" tabindex="-1" data-scene="dining"><img src="examples/indoor_room_a/panorama.jpg" alt="" width="1920" height="960" loading="lazy"><span><small>03 / INDOOR</small>Grand dining hall</span><i aria-hidden="true">↗</i></button>
+      <button class="scene-choice" id="scene-stylized" role="tab" aria-selected="false" aria-controls="scene-panel" tabindex="-1" data-scene="stylized"><img src="examples/indoor_room_b/panorama.jpg" alt="" width="2048" height="1024" loading="lazy"><span><small>04 / STYLIZED</small>A painted world</span><i aria-hidden="true">↗</i></button>
+    </div>
+    <div class="explorer" id="scene-panel" role="tabpanel" aria-labelledby="scene-courtyard">
+      <div class="explorer-toolbar"><div id="behavior-tabs" class="behavior-tabs" role="group" aria-label="Camera behavior"></div><span class="case-count" id="case-count">01 / 09 EXAMPLES</span></div>
+      <div class="explorer-stage">
+        <div class="scene-input">
+          <div class="panel-label"><span>INPUT / 360°</span><span>01</span></div>
+          <button class="panorama-preview" type="button" data-zoom="examples/outdoor_courtyard/panorama.jpg" data-caption="Input panorama · Winter courtyard">
+            <img id="scene-panorama" src="examples/outdoor_courtyard/panorama.jpg" alt="Input panorama of the winter courtyard" width="1920" height="960" loading="lazy">
+            <span>Expand full panorama <b>↗</b></span>
+          </button>
+        </div>
+        <div class="video-panel"><div class="panel-label"><span>PLANNED TRAJECTORY</span><span>02</span></div><video id="planned-video" muted loop playsinline controls preload="none" aria-label="Point-cloud render along the planned camera trajectory"></video><p><span class="legend-dot"></span> Point-cloud rendering</p></div>
+        <div class="video-panel"><div class="panel-label"><span>COMPLETED VIEW</span><span>03</span></div><video id="result-video" muted loop playsinline controls preload="none" aria-label="Geometry-completed video along the camera trajectory"></video><p><span class="legend-dot lime-dot"></span> Geometry-completed rendering</p></div>
+      </div>
+      <div class="instruction-bar">
+        <span class="tiny-label">LANGUAGE INSTRUCTION</span>
+        <div class="instruction-copy">
+          <p class="instruction" id="scene-instruction">Pan right across the snowy courtyard with the Christmas tree.</p>
+          <span class="instruction-note">Shortened description</span>
+        </div>
+        <a class="instruction-source" id="instruction-source" href="examples/outdoor_courtyard/target_christmas_tree_3/instruction.txt" target="_blank" rel="noopener">Read full instruction ↗</a>
+      </div>
+      <div class="explorer-controls"><span id="demo-status" role="status" aria-live="polite">Selected example videos</span><div><button id="replay-videos" type="button">↺ Replay both</button><button id="toggle-videos" type="button" aria-pressed="false">Play both <span>▶</span></button></div></div>
+    </div>
+    <noscript><p class="noscript-note">The interactive explorer needs JavaScript. Read the <a href="static/paper/OmniCam.pdf" target="_blank" rel="noopener">paper</a> for the method and results.</p></noscript>
+    <p class="section-footnote">Videos are precomputed research examples. Planned views visualize the predicted path; completed views use a downstream rendering pipeline.</p>
+  </div>
+</section>
+
+<section class="overview-section wrap section-space" aria-labelledby="overview-title">
+  <div class="section-heading"><div><p class="section-number">03 / THE BIG PICTURE</p><h2 id="overview-title">From understanding a scene<br>to moving through it.</h2></div><p>One model connects camera intent with scene geometry, across generation, reconstruction, and active perception.</p></div>
+  <figure class="paper-figure"><button type="button" data-zoom="static/media/teaser.webp" data-caption="OmniCam overview — dataset, trajectory generation, and downstream applications" aria-label="Expand OmniCam overview figure"><img src="static/media/teaser.webp" alt="OmniCam overview: OmniCaT training trajectories, panorama and language inputs, geometry-grounded trajectory generation, and three downstream applications" loading="lazy" width="2600" height="864"><span class="expand-hint">Explore figure <span>↗</span></span></button><figcaption><span>FIG. 01</span> OmniCam translates a single panorama and textual intent into spatially aware SE(3) camera trajectories.</figcaption></figure>
+  <div class="abstract-row"><span class="eyebrow">THE IDEA</span><p>Camera motion is more than a path through space. It is a decision about <strong>where to move, how to orient, and what to attend to.</strong> OmniCam brings panoramic geometry and language together in an autoregressive model, with hybrid pose tokens and explicit 3D target anchoring.</p></div>
+</section>
+
+<section class="method-section section-space" id="method" aria-labelledby="method-title">
+  <div class="wrap"><div class="section-heading"><div><p class="section-number">04 / INSIDE OMNICAM</p><h2 id="method-title">Geometry for structure.<br>Semantics for intent.</h2></div><a class="inline-link" href="static/paper/OmniCam.pdf#page=3" target="_blank" rel="noopener">Read the method <span>↗</span></a></div>
+    <div class="method-steps"><article><span class="step-index">01 <i aria-hidden="true">↗</i></span><h3>See in every direction.</h3><p>A panoramic point-cloud encoder captures omnidirectional context from estimated scene geometry.</p><span class="method-tag">PANORAMIC GEOMETRY</span></article><article><span class="step-index">02 <i aria-hidden="true">↗</i></span><h3>Give motion a language.</h3><p>Hybrid pose tokens combine absolute rotations, relative translations, and temporally consistent quaternion signs.</p><span class="method-tag">HYBRID POSE TOKENS</span></article><article><span class="step-index">03 <i aria-hidden="true">↗</i></span><h3>Ground the intention.</h3><p>Separate geometric and semantic pathways condition the decoder with an explicit, attention-aggregated 3D target anchor.</p><span class="method-tag">3D TARGET CONDITIONING</span></article></div>
+    <figure class="paper-figure"><button type="button" data-zoom="static/media/architecture.webp" data-caption="OmniCam architecture — panoramic geometry, hybrid tokenization, and target-aware decoding" aria-label="Expand method architecture"><img src="static/media/architecture.webp" alt="Detailed OmniCam architecture with geometric and semantic encoders, resamplers, 3D target centroid injection, and autoregressive pose decoding" loading="lazy" width="2600" height="1039"><span class="expand-hint">Inspect pipeline <span>↗</span></span></button><figcaption><span>FIG. 02</span> Nine tokens per frame: four for rotation, three for translation, and two for camera intrinsics.</figcaption></figure>
+  </div>
+</section>
+
+<section class="results-section wrap section-space" id="results" aria-labelledby="results-title">
+  <div class="section-heading"><div><p class="section-number">05 / MEASURED IN MOTION</p><h2 id="results-title">Better paths.<br>Stronger target awareness.</h2></div><p>Reported evaluation on OmniCaT.<br>All compared methods below are trained on OmniCaT.</p></div>
+  <div class="metric-highlights"><div><span class="metric-kicker">TRAJECTORY ACCURACY</span><strong>43.0<span>%</span><i>↓</i></strong><p>lower absolute trajectory error<br>vs. the best ATE baseline</p></div><div><span class="metric-kicker">SCENE GEOMETRY</span><strong>62.3<span>%</span><i>↓</i></strong><p>lower collision rate<br>vs. the best collision baseline</p></div><div><span class="metric-kicker">TARGET FRAMING</span><strong>52.0<span>%</span><i>↗</i></strong><p>target visibility<br>vs. 33.6% for GenDoP</p></div></div>
+  <div class="results-workbench"><div class="results-toolbar"><span class="eyebrow">A CLOSER LOOK</span><div class="result-tabs" role="tablist" aria-label="Result metric"><button id="metric-ate" type="button" role="tab" aria-selected="true" aria-controls="metric-panel" data-metric="ate">Trajectory error</button><button id="metric-collision" type="button" role="tab" aria-selected="false" aria-controls="metric-panel" tabindex="-1" data-metric="collision">Collisions</button><button id="metric-visibility" type="button" role="tab" aria-selected="false" aria-controls="metric-panel" tabindex="-1" data-metric="visibility">Visibility</button></div></div><div id="metric-panel" class="metric-panel" role="tabpanel" aria-labelledby="metric-ate"><div><h3 id="metric-title">Absolute trajectory error</h3><p id="metric-description">Lower is better. Relative improvement over Director3D, the strongest ATE baseline in this comparison.</p></div><div id="metric-chart" class="metric-chart" aria-live="polite"></div></div></div>
+  <div class="table-scroll" role="region" aria-label="Full quantitative comparison, scroll horizontally on small screens" tabindex="0"><table><caption>Trajectory generation on OmniCaT</caption><thead><tr><th scope="col">Method</th><th scope="col">ATE ↓</th><th scope="col">FDE ↓</th><th scope="col">RPE-R ↓</th><th scope="col">RPE-T ↓</th><th scope="col">Collision ↓</th><th scope="col">Visibility ↑</th><th scope="col">Angle ↓</th></tr></thead><tbody><tr><th scope="row">Director3D</th><td>1.522</td><td>2.648</td><td>2.187</td><td>0.049</td><td>27.6%</td><td>29.3%</td><td>26.5°</td></tr><tr><th scope="row">GenDoP</th><td>1.624</td><td>2.483</td><td>1.577</td><td>0.038</td><td>30.4%</td><td>33.6%</td><td>27.6°</td></tr><tr class="ours"><th scope="row">OmniCam <span>OURS</span></th><td>0.868</td><td>1.462</td><td>1.135</td><td>0.027</td><td>10.4%</td><td>52.0%</td><td>10.9°</td></tr></tbody></table></div>
+  <p class="caption-note">Relative ATE and collision reductions use Director3D as the best baseline for each metric. Collision is evaluated against reconstructed navigation meshes; trajectory errors compare with generated reference supervision. See the paper for evaluation details and limitations.</p>
+  <figure class="paper-figure qualitative"><button type="button" data-zoom="static/media/qualitative-trajectories.webp" data-caption="Qualitative trajectory comparisons from the paper" aria-label="Expand qualitative trajectory comparison"><img src="static/media/qualitative-trajectories.webp" alt="Qualitative comparison of trajectories produced by OmniCam and baseline methods across different scene geometries" loading="lazy" width="2600" height="1744"><span class="expand-hint">Compare trajectories <span>↗</span></span></button><figcaption><span>FIG. 03</span> Qualitative trajectory comparisons. The target bounding boxes show the intended subject.</figcaption></figure>
+</section>
+
+<section class="applications-section section-space" aria-labelledby="applications-title"><div class="wrap"><div class="section-heading"><div><p class="section-number light">06 / BEYOND THE TRAJECTORY</p><h2 id="applications-title">A path is just<br>the beginning.</h2></div><p>Camera trajectories provide a control signal for generated video, 3D reconstruction, and robotic perception.</p></div><div class="application-feature"><div class="application-copy"><span class="pill">01 / VIDEO + RECONSTRUCTION</span><h3>Guide the viewpoint.<br>Reveal the scene.</h3><p>OmniCam trajectories drive downstream view synthesis, connecting a panorama to a sequence of new perspectives.</p><div class="small-metrics"><div><strong>+14.1%</strong><span>CLIP score</span></div><div><strong>+15.4%</strong><span>adjacent-frame SSIM</span></div></div><p class="application-note">Trajectory + WorldStereo pipeline, relative to GenDoP trajectories on 484 reported examples. Adjacent-frame SSIM depends on motion magnitude.</p></div><figure class="application-figure"><button type="button" data-zoom="static/media/qualitative-video.webp" data-caption="Camera-controlled video generation and reconstruction — selected examples" aria-label="Expand video and reconstruction results"><img src="static/media/qualitative-video.webp" alt="Paper examples of input panoramas, generated video frames, and reconstructed 3D scenes" loading="lazy" width="2600" height="1378"><span class="expand-hint">View results ↗</span></button></figure></div><div class="robot-row"><div><span class="pill">02 / ACTIVE PERCEPTION</span><h3>A better view<br>for the next action.</h3><p>Object-directed camera motion helps reveal task-relevant regions for robotic perception. These qualitative examples illustrate the downstream use of generated viewpoints.</p></div><figure class="application-figure"><button type="button" data-zoom="static/media/qualitative-robot.webp" data-caption="Qualitative robotic active-perception examples from the paper" aria-label="Expand robotic active-perception examples"><img src="static/media/qualitative-robot.webp" alt="Robot examples using camera-guided active perception to inspect task-relevant objects" loading="lazy" width="2600" height="645"><span class="expand-hint">Inspect examples ↗</span></button></figure></div></div></section>
+
+<section class="dataset-section wrap section-space" id="dataset" aria-labelledby="dataset-title"><div class="section-heading"><div><p class="section-number">07 / THE OMNICAT DATASET</p><h2 id="dataset-title">Built to explore.<br>At a different scale.</h2></div><p>From panoramic scenes to geometry-grounded trajectories, with semantic targets and hierarchical language annotations.</p></div><div class="dataset-stats"><div><strong>267,700</strong><span>camera trajectories</span></div><div><strong>9,998</strong><span>panoramic scenes</span></div><div><strong>21.7M</strong><span>rendered frames</span></div></div><div class="distribution" aria-label="Dataset distribution: Surround 97,702; Target 90,065; Reconstruct 43,316; Wander 36,617"><span style="--share:36.50%;--segment:#1f5b49"></span><span style="--share:33.64%;--segment:#83a38b"></span><span style="--share:16.18%;--segment:#c6db8c"></span><span style="--share:13.68%;--segment:#e5d7b7"></span></div><div class="behavior-legend"><span><i style="--segment:#1f5b49"></i>Surround <b>97,702</b></span><span><i style="--segment:#83a38b"></i>Target <b>90,065</b></span><span><i style="--segment:#c6db8c"></i>Reconstruct <b>43,316</b></span><span><i style="--segment:#e5d7b7"></i>Wander <b>36,617</b></span></div><figure class="paper-figure"><button type="button" data-zoom="static/media/dataset.webp" data-caption="OmniCaT — geometric and semantic grounding, trajectory synthesis, and multimodal annotation" aria-label="Expand OmniCaT dataset pipeline"><img src="static/media/dataset.webp" alt="OmniCaT dataset construction workflow and statistics for four camera behaviors" loading="lazy" width="2600" height="960"><span class="expand-hint">Explore the dataset <span>↗</span></span></button><figcaption><span>FIG. 04</span> Geometry and semantic grounding → trajectory synthesis → rendering and multimodal annotation.</figcaption></figure><div class="benchmark-callout"><div><span class="eyebrow">DATASET DESIGN</span><h3>Geometry, motion, and language.</h3><p>The paper describes how OmniCaT combines panoramic scene geometry, four camera behaviors, and hierarchical language annotations.</p></div><a class="button dark" href="static/paper/OmniCam.pdf" target="_blank" rel="noopener">Read about OmniCaT <span>↗</span></a></div></section>
+
+<section class="citation-section" id="citation" aria-labelledby="citation-title"><div class="wrap citation-grid"><div><p class="section-number">08 / BUILD ON THIS WORK</p><h2 id="citation-title">A new perspective<br>starts here.</h2><p>If OmniCam is useful to your research,<br>please consider citing our work.</p><a class="inline-link" href="static/paper/OmniCam.pdf" target="_blank" rel="noopener">Read the paper <span>↗</span></a></div><div class="citation-box"><div><span>BIBTEX</span><button id="copy-citation" type="button">Copy citation <span>⧉</span></button></div><pre><code id="bibtex">@misc{liu2026omnicam,
+  title  = {OmniCam: Omni-Camera Trajectory Generation
+            via Geometry-Grounded Pose Token Learning},
+  author = {Liu, Zhenyang and Cao, Chenjie and
+            Zhang, Yisu and Zuo, Xuhui and
+            Xue, Xiangyang and Fu, Yanwei and
+            Wang, Tengfei and Guo, Chunchao},
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://zhenyangliu.github.io/OmniCam-Website/}
+}</code></pre><p id="copy-status" role="status" aria-live="polite"></p></div></div></section>
+</main>
+<footer class="site-footer wrap"><a class="wordmark" href="#">OmniCam<span class="wordmark-dot">.</span></a><span>Scene-aware motion. Frame by frame.</span><a href="#main">Back to the top ↑</a></footer>
+<dialog id="figure-dialog" aria-labelledby="figure-caption"><div class="dialog-toolbar"><p id="figure-caption"></p><button id="close-figure" type="button" aria-label="Close enlarged figure">Close ×</button></div><div class="dialog-image-wrap" tabindex="0" role="region" aria-label="Enlarged figure. Use arrow keys to scroll."><img id="figure-image" alt=""></div><p class="dialog-help">Scroll to inspect · Escape to close</p></dialog>
+</body>
+</html>

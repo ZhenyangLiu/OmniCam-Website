@@ -1,0 +1,29 @@
+OmniCam / OmniCaT — Third-Party Notices
+=======================================
+
+This project builds on, and redistributes ideas or code adapted from, the
+following third-party works. Each remains under its own license; please review
+and comply with the upstream terms before use or redistribution.
+
+Frameworks the model code derives from
+--------------------------------------
+- GenDoP (Auto-regressive Camera Trajectory Generation)
+  https://github.com/3DTopia/GenDoP
+- EdgeRunner (NVIDIA)  — source-available, non-commercial research use
+  https://github.com/NVlabs/EdgeRunner
+  (Some files under omnicam/core retain the original NVIDIA copyright headers.)
+
+Pretrained models / tools used at runtime
+------------------------------------------
+- MoGe / MoGe-2 (Microsoft)            https://github.com/microsoft/MoGe
+- SAM 3 (Meta AI)                      https://github.com/facebookresearch/sam3
+- GroundingDINO (IDEA-Research)        https://github.com/IDEA-Research/GroundingDINO
+- ZIM (NAVER AI)                       https://github.com/naver-ai/ZIM
+- Qwen3-VL (Alibaba)                   https://github.com/QwenLM/Qwen
+- Recast & Detour                      https://github.com/recastnavigation/recastnavigation
+- Stable Diffusion 2.1 (Stability AI)  https://huggingface.co/stabilityai/stable-diffusion-2-1-base
+- EVO (trajectory evaluation)          https://github.com/MichaelGrupp/evo
+- utils3d                              https://github.com/EasternJournalist/utils3d
+
+The pre-compiled navmesh extension `omnicat/recast.cpython-311-x86_64-linux-gnu.so`
+is a Python binding built from Recast & Detour (zlib license).
