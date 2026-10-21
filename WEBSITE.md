@@ -66,7 +66,9 @@ in sync with `README.md`. The confirmed author order is Zhenyang Liu, Chenjie Ca
 Xuhui Zuo, Xiangyang Xue, Yanwei Fu, Tengfei Wang, and Chunchao Guo. Zhenyang Liu includes
 Tencent Hunyuan; Yisu Zhang lists Zhejiang University before Tencent Hunyuan. Tengfei Wang is
 Project Lead; Xiangyang Xue and Yanwei Fu are Corresponding authors. Emails are currently
-omitted. Do not infer conference acceptance or an arXiv identifier from the PDF’s template.
+omitted. The paper is available at https://arxiv.org/abs/2610.09513; use the confirmed
+`@article{liu2026omnicam}` citation with `journal={arXiv preprint arXiv:2610.09513}`.
+Do not infer conference acceptance from the PDF’s template.
 
 For a gallery addition, publish only the selected case’s `panorama.jpg`, `instruction.txt`,
 `planned.mp4`, `result.mp4`, and any visual asset actually used on the page. Add the matching
